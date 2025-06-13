@@ -1,0 +1,24 @@
+{
+  "equipment": [
+    {
+      "name": "Initial Monster Trucks",
+      "description": "Versatile **monster trucks** with balanced power, off-road capability, and handling. Perfect for various **offroad** tracks."
+    },
+    {
+      "name": "Light Offroaders",
+      "description": "Fast and agile **all-terrain vehicles** ideal for speed races and exploring hard-to-reach areas."
+    },
+    {
+      "name": "Heavy Duty Trucks",
+      "description": "Powerful **offroad vehicles** with immense torque but slower speeds. Excellent for overcoming the toughest obstacles."
+    },
+    {
+      "name": "Trophy Race Buggies",
+      "description": "Specialized **buggies** with reinforced suspension and a lightweight design for extreme **offroad** racing."
+    },
+    {
+      "name": "Offroad Support Vehicles",
+      "description": "Long-range support vehicles capable of delivering heavy cargo and equipment through the most impassable terrain."
+    }
+  ]
+}

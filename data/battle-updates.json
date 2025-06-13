@@ -1,0 +1,28 @@
+{
+  "updates": [
+    {
+      "title": "New Track: Sandy Dunes",
+      "date": "2024-03-15",
+      "content": "Experience intense **monster truck** action on our new **offroad** track featuring dynamic sandstorms and tricky climbs.",
+      "image": "images/battle-1.jpg"
+    },
+    {
+      "title": "Event: Winter Rush",
+      "date": "2024-03-10",
+      "content": "Special winter-themed **races** with snow-covered terrain and unique winter camouflage options for your **trucks**.",
+      "image": "images/battle-2.jpg"
+    },
+    {
+      "title": "Community Tournament Results",
+      "date": "2024-03-05",
+      "content": "Congratulations to Team 'Thunder Rumble' for winning the March Community **Offroad** Tournament! Check out the highlights and statistics.",
+      "image": "images/battle-3.jpg"
+    },
+    {
+      "title": "New **Monster Trucks**: Extreme Series",
+      "date": "2024-02-28",
+      "content": "Introducing the latest generation of **monster trucks** with improved offroad capability and powerful engines for extreme terrain.",
+      "image": "images/battle-4.jpg"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stay updated with the latest race updates and game improvements in Realistic Monster Truck Offroad Simulator. Track new tracks, events, and truck line updates."
+    />
+    <title>
+      Race Log - Realistic Monster Truck Offroad Simulator | Domain.com
+    </title>
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <section class="game-updates">
+        <div class="container">
+          <h2>Game Updates</h2>
+          <div class="updates-list" id="game-updates-content"></div>
+        </div>
+      </section>
+
+      <section class="battle-updates">
+        <div class="container">
+          <h1>Race Log</h1>
+          <div class="updates-grid" id="updates-content"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Load content from JSON files
+      document.addEventListener("DOMContentLoaded", async () => {
+        const battleUpdatesData = await loadJSONData(
+          "data/battle-updates.json"
+        );
+        const gameUpdatesData = await loadJSONData("data/game-updates.json");
+
+        // Render content
+        if (battleUpdatesData) {
+          document.getElementById("updates-content").innerHTML =
+            renderBattleUpdates(battleUpdatesData);
+        }
+        if (gameUpdatesData) {
+          document.getElementById("game-updates-content").innerHTML =
+            renderGameUpdates(gameUpdatesData);
+        }
+      });
+
+      // Content rendering functions
+      function renderBattleUpdates(data) {
+        return data.updates
+          .map(
+            (update) => `
+                <article class="update-card">
+                    <div class="update-image">
+                        <img src="${update.image}" alt="${update.title}">
+                    </div>
+                    <div class="update-content">
+                        <h3>${update.title}</h3>
+                        <p class="update-date">${update.date}</p>
+                        <p>${update.content}</p>
+                    </div>
+                </article>
+            `
+          )
+          .join("");
+      }
+
+      function renderGameUpdates(data) {
+        return data.updates
+          .map(
+            (update) => `
+                <article class="update-item">
+                    <div class="update-content">
+                        <h3>${update.title}</h3>
+                        <p class="update-date">${update.date}</p>
+                        <p>${update.content}</p>
+                    </div>
+                </article>
+            `
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>

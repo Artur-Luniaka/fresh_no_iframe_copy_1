@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Experience the ultimate monster truck offroad simulation in Realistic Monster Truck Offroad Simulator. Engage in epic races, customize your trucks, and dominate the mud and dirt with advanced offroad equipment."
+    />
+    <title>Realistic Monster Truck Offroad Simulator | Domain.com</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Welcome to Realistic Monster Truck Offroad Simulator</h1>
+            <p>Experience the ultimate monster truck offroad simulation</p>
+            <div class="hero-image">
+              <img
+                src="images/hero-tank.jpg"
+                alt="Realistic Monster Truck Offroad Simulator Game"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="game-modes" class="game-modes">
+        <div class="container">
+          <h2>Game Modes</h2>
+          <div class="modes-content" id="modes-content"></div>
+        </div>
+      </section>
+
+      <section id="how-to-play" class="how-to-play">
+        <div class="container">
+          <h2>How to Play</h2>
+          <div class="gameplay-content" id="gameplay-content"></div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews">
+        <div class="container">
+          <h2>Player Reviews</h2>
+          <div class="reviews-grid" id="reviews-content"></div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <h2>Game Features</h2>
+          <div class="features-grid" id="features-content"></div>
+        </div>
+      </section>
+
+      <section id="equipment" class="equipment">
+        <div class="container">
+          <h2>Truck Garage</h2>
+          <div class="equipment-content" id="equipment-content"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <div class="cookie-bar" id="cookieBar">
+      <div class="cookie-bar-content">
+        We use cookies to enhance your experience. By continuing to visit this
+        site you agree to our use of cookies.
+        <a href="tank-cookies.html">Cookie Notice</a>
+      </div>
+      <div class="cookie-bar-buttons">
+        <button class="btn" id="acceptCookies">Accept</button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Cookie bar functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const cookieBar = document.getElementById("cookieBar");
+        const acceptButton = document.getElementById("acceptCookies");
+
+        // Check if user has already accepted cookies
+        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+        if (!cookiesAccepted) {
+          // Show cookie bar after a short delay
+          setTimeout(() => {
+            cookieBar.classList.add("visible");
+          }, 1000);
+        }
+
+        // Handle accept button click
+        acceptButton.addEventListener("click", () => {
+          cookieBar.classList.remove("visible");
+          // Save acceptance in localStorage
+          localStorage.setItem("cookiesAccepted", "true");
+        });
+      });
+
+      // Load content from JSON files
+      document.addEventListener("DOMContentLoaded", async () => {
+        const featuresData = await loadJSONData("data/features.json");
+        const gameplayData = await loadJSONData("data/gameplay.json");
+        const reviewsData = await loadJSONData("data/reviews.json");
+        const modesData = await loadJSONData("data/modes.json");
+        const equipmentData = await loadJSONData("data/equipment.json");
+
+        // Render content
+        if (featuresData) {
+          document.getElementById("features-content").innerHTML =
+            renderFeatures(featuresData);
+        }
+        if (gameplayData) {
+          document.getElementById("gameplay-content").innerHTML =
+            renderGameplay(gameplayData);
+        }
+        if (reviewsData) {
+          document.getElementById("reviews-content").innerHTML =
+            renderReviews(reviewsData);
+        }
+        if (modesData) {
+          document.getElementById("modes-content").innerHTML =
+            renderModes(modesData);
+        }
+        if (equipmentData) {
+          document.getElementById("equipment-content").innerHTML =
+            renderEquipment(equipmentData);
+        }
+      });
+
+      // Content rendering functions
+      function renderFeatures(data) {
+        return data.features
+          .map(
+            (feature) => `
+                <div class="feature-card">
+                    <h3>${feature.title}</h3>
+                    <p>${feature.description}</p>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function renderGameplay(data) {
+        return `
+                <div class="gameplay-steps">
+                    ${data.steps
+                      .map(
+                        (step) => `
+                        <div class="step">
+                            <h3>${step.title}</h3>
+                            <p>${step.description}</p>
+                        </div>
+                    `
+                      )
+                      .join("")}
+                </div>
+            `;
+      }
+
+      function renderReviews(data) {
+        return data.reviews
+          .map(
+            (review) => `
+                <div class="review-card">
+                    <div class="review-rating" data-rating="${review.rating}"></div>
+                    <p class="review-text">${review.text}</p>
+                    <div class="review-author">
+                        <strong>${review.author}</strong>
+                        <span>${review.role}</span>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function renderModes(data) {
+        return data.modes
+          .map(
+            (mode) => `
+                <div class="mode-card">
+                    <h3>${mode.title}</h3>
+                    <p>${mode.description}</p>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function renderEquipment(data) {
+        return data.equipment
+          .map(
+            (item) => `
+                <div class="equipment-card">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>

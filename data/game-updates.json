@@ -1,0 +1,28 @@
+{
+  "updates": [
+    {
+      "title": "Version 2.1.0 Released",
+      "date": "2024-03-20",
+      "content": "Major update featuring improved graphics, new **monster truck** sound effects, and enhanced **offroad physics**. Also includes various bug fixes and performance improvements.",
+      "image": "images/news/version-update.jpg"
+    },
+    {
+      "title": "Matchmaking Improvements",
+      "date": "2024-03-15",
+      "content": "Updated matchmaking system for better **race** balance and reduced waiting times. New skill-based ranking system implemented for **drivers**.",
+      "image": "images/news/matchmaking.jpg"
+    },
+    {
+      "title": "UI Overhaul",
+      "date": "2024-03-10",
+      "content": "Complete redesign of the user interface for better usability and modern look. New customization options for **in-cockpit** HUD elements.",
+      "image": "images/news/ui-update.jpg"
+    },
+    {
+      "title": "Server Maintenance",
+      "date": "2024-03-05",
+      "content": "Scheduled maintenance completed. Server infrastructure upgraded for better performance and stability of **online races**.",
+      "image": "images/news/server-update.jpg"
+    }
+  ]
+}

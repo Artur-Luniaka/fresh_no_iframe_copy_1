@@ -1,0 +1,24 @@
+{
+  "steps": [
+    {
+      "title": "Basic Controls",
+      "description": "Master the essential controls: WASD for **driving**, mouse for **camera**, and left click for **nitro boost**. Use spacebar for **handbrake** and shift for **super speed**."
+    },
+    {
+      "title": "Truck Selection",
+      "description": "Choose your **monster truck** based on your playstyle. **Light offroaders** are fast but less stable, **heavy trucks** are slow but powerful, and **balanced rigs** offer versatile performance."
+    },
+    {
+      "title": "Driving Mechanics",
+      "description": "Learn to **drift around corners**, manage your **nitro**, and use **terrain for jumps and stunts**. Remember to repair your **truck** if it gets damaged."
+    },
+    {
+      "title": "Race Strategy",
+      "description": "Coordinate with your **team**, assign roles, and develop tactics for **offroad races**. Communication is key to victory in **multiplayer events**."
+    },
+    {
+      "title": "Resource Management",
+      "description": "Manage your resources wisely. Collect **nitro refills** and **repair kits** from supply points, and use your **boost power** strategically."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "modes": [
+    {
+      "title": "Freestyle Destruction",
+      "description": "Unleash chaos in arenas designed for ultimate **monster truck destruction**. Score points for smashing obstacles and performing epic stunts."
+    },
+    {
+      "title": "Offroad Race",
+      "description": "Compete against rivals on challenging **offroad tracks**. Navigate treacherous terrain and be the first to cross the finish line."
+    },
+    {
+      "title": "Mud Bogging Challenge",
+      "description": "Test your **truck's** power in deep mud pits. Conquer the bog by maintaining momentum and avoiding getting stuck."
+    },
+    {
+      "title": "Stunt Showdown",
+      "description": "Perform gravity-defying jumps and daring tricks to impress the crowd. Master aerial maneuvers and perfect landings to earn the highest score."
+    },
+    {
+      "title": "Expedition Mode",
+      "description": "Embark on expansive **offroad adventures** across diverse landscapes. Discover hidden paths, complete exploration objectives, and overcome environmental challenges."
+    }
+  ]
+}

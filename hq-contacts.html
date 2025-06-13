@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact the Monster Truck Offroad Simulator Driver's Hub. Get in touch with our team for support, feedback, or business inquiries. We're here to help you with any questions about the game."
+    />
+    <title>
+      Driver's Hub - Realistic Monster Truck Offroad Simulator | Domain.com
+    </title>
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <section class="contact-form">
+        <div class="container">
+          <h2>Send Us a Message</h2>
+          <form id="feedback-form" class="feedback-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="contact-info">
+        <div class="container">
+          <h1>Driver's Hub Contacts</h1>
+          <div class="contact-grid">
+            <div class="contact-details" id="contact-details"></div>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.8335025986915!2d-1.7458145224341998!3d53.33649517227448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487966953046755b%3A0x7d23d8c19a4a7536!2sTongue%20Lane%2C%20Offerton%2C%20Hope%20Valley%2C%20Derbyshire%20S33%200AE%2C%20UK!5e0!3m2!1sen!2spl!4v1718209930818!5m2!1sen!2spl"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Load contact information from JSON
+      document.addEventListener("DOMContentLoaded", async () => {
+        const contactData = await loadJSONData("data/contact-info.json");
+
+        if (contactData) {
+          document.getElementById("contact-details").innerHTML =
+            renderContactInfo(contactData);
+        }
+      });
+
+      // Render contact information
+      function renderContactInfo(data) {
+        return `
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>${data.email}</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p>${data.phone}</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Address</h3>
+                    <p>${data.address}</p>
+                </div>
+            `;
+      }
+
+      // Handle form submission
+      document
+        .getElementById("feedback-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value,
+          };
+
+          try {
+            // Here you would typically send the form data to a server
+            console.log("Form submitted:", formData);
+            alert("Thank you for your message! We will get back to you soon.");
+            e.target.reset();
+          } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("There was an error sending your message. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>
